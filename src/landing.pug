@@ -1,0 +1,20 @@
+extends ./layouts/extends/index
+
+
+include layouts/info/info
+include layouts/photo/photo
+include layouts/persons/persons
+include layouts/programm/programm
+include layouts/tickets/tickets
+include layouts/more/more
+include layouts/goals/goals
+
+block content
+  .main-content
+    +info
+    +photo
+    +persons
+    +goals
+    +programm
+    +tickets
+    +more

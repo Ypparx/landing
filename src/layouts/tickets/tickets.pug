@@ -1,0 +1,28 @@
+mixin tickets
+    +b.tickets
+        +e('h2').sub-title(id="tickets") Билеты
+        +e('p').description Для тех, кто уже был на лекциях в нашем салоне и слышал кого-то из наших спикеров, мы сделали специальную возможность, купить билет на выбранный вами день конференци!
+        +e('p').description Количество мест ограничено!
+        +e.list
+            +e.ticket
+                +e.ticket-type 1-ый День, 20 сентября
+                +e('img').ticket-image(src="./img/buy.png")
+                +e.ticket-price 3000 рублей
+                +e.ticket-price-with-sale Повышение цен с 5 сентября
+                +e.ticket-price-with-sale Свободная посадка
+                +e('a').ticket-buy(data-event-id="8846", rel="qtickets") Купить билет
+
+            +e.ticket
+                +e.ticket-type 2-ой День, 21 сентября
+                +e('img').ticket-image(src="./img/buy.png")
+                +e.ticket-price 3000 рублей
+                +e.ticket-price-with-sale Повышение цен с 5 сентября
+                +e.ticket-price-with-sale Свободная посадка
+                +e('a').ticket-buy(data-event-id="8846", rel="qtickets") Купить билет
+            +e.ticket
+                +e.ticket-type Два дня, 20-21 сентября
+                +e('img').ticket-image(src="./img/buy.png")
+                +e.ticket-price 5000 рублей
+                +e.ticket-price-with-sale Повышение цен с 5 сентября
+                +e.ticket-price-with-sale Свободная посадка
+                +e('a').ticket-buy(data-event-id="8846", rel="qtickets") Купить билет

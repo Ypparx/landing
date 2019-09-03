@@ -1,0 +1,16 @@
+mixin info
+    +b.info
+        +e('img').image(src="./img/main.jpg")
+        
+        +e.title-wrapper
+            +e('h1').title Конференция для дизайнеров <br/> арт-пространство BACKGROUND<br/> 20-21 сентября
+            +e('p').adress Москва, Фрунзенская набережная, 30
+
+
+            +e.links
+                +e('a').logo-link(href="https://salon-oboev.ru" target="_blank")
+                    +e('img').logo(src="./img/logo_white.png")
+                +e('a').link(href="#speakers") Спикеры
+                +e('a').link(href="#programm") Программа
+                +e('a').link(href="#more") О нас
+                +e('a').link(href="#tickets") Билеты

@@ -1,0 +1,6 @@
+mixin img(name)
+  img(
+    class!=attributes.class,
+    src='./img/1x/'+name,
+    srcset='./img/1x/'+ name +' 1x,./img/2x/'+ name +' 2x,./img/3x/'+ name +' 3x',
+  )

@@ -1,0 +1,16 @@
+mixin photo
+    +b.photo
+        +e('h2').sub-title(id="speakers") Наши мероприятия
+        +e('p').description В нашем салоне ежемесячно проходят мастер-классы для дизайнеров, архитекторов и просто неравнодушных людей!
+
+        +e.images
+            +e('img').image(src="./img/1.jpg")
+            +e('img').image(src="./img/2.jpg")
+            +e('img').image(src="./img/3.jpg")
+            +e('img').image(src="./img/4.jpg")
+            +e('img').image(src="./img/5.jpg")
+            +e('img').image(src="./img/6.jpg")
+        
+        +e.logo-wrapper
+            +e('img').logo(src="./img/logo.png")
+            +e('p').second-description В арт-пространстве Background мы проводим мероприятия уже более двух лет. На конференции 20-21 сентября мы соберем ведущих наших спикеров и глубоко погрузимся в мир дизайна интерьера.

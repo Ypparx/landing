@@ -1,0 +1,4 @@
+include ../extends/img
+
+mixin payway-card(name, className)
+  .payway-card(class!="_" + (className || name)): +img('payways/'+ name + '.png')(class='payway-card__logo')

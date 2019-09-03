@@ -1,0 +1,6 @@
+mixin other-item(img, name, description)
+  +b.other-item
+    +e('img').list-item-image(src='./img/svg/menu-items/' + img)
+    +e('h4').list-item-name= name
+    +e('h4').list-item-description= description
+    a.internet-acquiring-other__list-item-btn.btn._green._medium(href='') Подробнее

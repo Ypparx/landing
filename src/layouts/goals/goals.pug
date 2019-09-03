@@ -1,0 +1,24 @@
+mixin goals
+    +b.goals
+        +e.goal
+            +e.goal-info
+                +e('p').goal-title Цели конференции
+                +e('p').goal-text Наша цель – дать полный объем знаний в сфере дизайна, начиная от работы с планировкой и заканчивая созданием привлекательной фотографии вашего готового интерьера.
+            +e('img').goal-image(src="./img/goals.jpg")
+        +e.goal
+            +e.goal-info
+                +e('p').goal-title Для кого
+                +e('p').goal-text Наши основные гости – это дизайнеры. Однако фотографам, интерьерным стилистам, поставщикам тоже будет интересно.
+            +e('img').goal-image(src="./img/for-whom.jpg")
+        +e.goal
+            +e.goal-info
+                +e('p').goal-title Что узнаете
+                +e('p').goal-text Выбирая спикеров для конференции, мы ориентировались на самые горячие темы, такие как: планировки, развитие личного «Instagram» аккаунта, и другие.
+            +e('img').goal-image(src="./img/new.jpg")
+
+        +e.gifts
+            +e('img').gift-image(src="./img/gift.png")
+            +e.gifts-info
+                +e('h2').title Подарки
+                +e('p').description Во время конференции будут вручаться призы и проходить розыгрыши от салона Background и партнеров мероприятия
+                +e('a').ticket-buy(data-event-id="8846", rel="qtickets") Купить билет

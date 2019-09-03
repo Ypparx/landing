@@ -1,0 +1,14 @@
+block variables
+//
+  -var id = ''
+  -var className = ''
+  -var leftColor = ''
+  -var rightColor = ''
+
++b.split-panel(class=className,  id=id)
+  +e.left-side(class=' ' + leftColor + ' ' + className + '__left-side')
+    +e.info(class=className + '__info  _left')
+      block left-side
+  +e.right-side(class=' ' + rightColor + ' ' + className + '__right-side')
+    +e.info(class=className + '__info  _right')
+      block right-side

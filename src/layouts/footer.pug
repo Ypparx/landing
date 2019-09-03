@@ -1,0 +1,75 @@
+include ./extends/img
+
+mixin footer
+  +b.footer
+    .content
+      +e.info
+        +e.menu._tablet
+          +e.menu-row
+            +conditions()
+            +solutions()
+          +e.menu-row
+            +tech()
+            +about()
+          +e.menu-row
+            +contacts()
+
+
+        +e.menu._desktop
+          +e.menu-row
+            +conditions()
+          +e.menu-row
+            +solutions()
+          +e.menu-row
+            +tech()
+          +e.menu-row
+            +about()
+            +contacts()
+
+      +e.general
+        +e.partners
+          +img('footer/securecode.png').footer__partner
+          +img('footer/visa.png').footer__partner
+          +img('footer/3D_Secure.png').footer__partner
+          +e('img').partner(src='./img/svg/footer/PCI.svg')
+        +e.copy © 2019 1Payment. Все права защищены
+        +e('a').develop(href='https://parkside.agency/', target='_blank') Дизайн и разработка – PARKSIDE
+
+mixin conditions()
+  +e('ul').menu-column
+    +e('li').menu-item: a(href='#') Условия использования
+    +e('li').menu-item: a(href='#') Соглашение
+    +e('li').menu-item: a(href='#') Политика конфиденциальности
+    +e('li').menu-item: a(href='#') Файлы Cookies
+mixin solutions()
+  +e('ul').menu-column
+    +e('li').menu-item: a(href='#') Наши решения
+    +e('li').menu-item: a(href='#') Интернет-эквайринг
+    +e('li').menu-item: a(href='#') Массовые выплаты
+    +e('li').menu-item: a(href='#') Мобильная коммерция
+    +e('li').menu-item: a(href='#') Рекуррентные платежи
+    +e('li').menu-item: a(href='#') Платежные методы
+    +e('li').menu-item: a(href='#') P2P-переводы
+mixin tech()
+  +e('ul').menu-column
+    +e('li').menu-item: a(href='#') Технологии
+    +e('li').menu-item: a(href='#') Контроль фрода
+    +e('li').menu-item: a(href='#') Клиентский интерфейс
+    +e('li').menu-item: a(href='#') Платежная форма
+    +e('li').menu-item: a(href='#') Бесперебойная работа
+mixin about()
+  +e('ul').menu-column
+    +e('li').menu-item: a(href='#') О компании
+    +e('li').menu-item: a(href='#') Демо-версия
+    +e('li').menu-item: a(href='#') О нас
+mixin contacts()
+  +e('ul').menu-column
+    +e('li').menu-item: a(href='#') Контакты
+    +e('li').menu-item: a(href='#') 
+      +e.contacts-row
+        +img('contacts_phone_white.png')(class='footer__contacts-icon footer__contacts-icon_phone')
+        +e('span').contact +7 (499) 553-06-12
+    +e('li').menu-item: a(href='#')
+      +e.contacts-row
+        +img('contacts_facebook_white.png')(class='footer__contacts-icon')
+        +e('span').contact Мы в Facebook

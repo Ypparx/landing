@@ -1,0 +1,240 @@
+include ./extends/img
+
+mixin header
+  +b.header(class!=attributes.class)
+    .content._flex
+      +e('a').logo(href="main.html")
+        +e('img')(src='./img/svg/' + attributes.img)
+      +e('ul').menu(data-container='main-menu')
+        +e('li').menu-item(class=attributes.current === '1'?' _current':'', data-page='solutions'): .link
+          +e('a').menu-item-link(href="solutions.html") Решения
+          +e().menu-list
+            +e().menu-list-content
+              +menu-item('internet.svg', 'Интернет-эквайринг', 'Принимайте платежи в любой стране мира и в любой валюте.', 'internet-acquiring.html')
+              +menu-item('recurrence.svg', 'Рекуррентные платежи', 'Увеличьте конверсию за счет упрощения процесса повторных оплат.', 'recurrence.html')
+              +menu-item('payments.svg', 'Массовые выплаты', 'Отправляйте моментальные выплаты своим клиентам.', 'payments.html')
+              +menu-item('methods.svg', 'Платежные методы', 'Повышайте прибыль за счет более 30 способов оплаты.', 'methods.html')
+              +menu-item('mobile.svg', 'Мобильная коммерция', 'Принимайте платежи с мобильного счета в любом регионе РФ.', 'mobile.html')
+              +menu-item('p2p.svg', 'P2P-переводы', 'Комплексное решение для переводов между физическими лицами.', 'p2p.html')
+
+        +e('li').menu-item(class=attributes.current === '2'?' _current':'', data-page='technology', href="technology.html"): .link
+          +e('a').menu-item-link(href="technologies.html") Технологии
+          +e().menu-list
+            +e().menu-list-content
+              +menu-item('work.svg', 'Бесперебойная работа', 'Комплексный подход к обеспечению непрерывной работы системы.', 'work.html')
+              +menu-item('fraud.svg', 'Контроль фрода', 'Предотвращение потерь, связанных с мошеннической деятельностью.', 'fraud.html')
+              +menu-item('clients.svg', 'Клиентский интерфейс', 'Простой и продуманный интерфейс для управления финансовыми потоками.', 'clients.html')
+              +menu-item('payments-form.svg', 'Платежная форма', 'Минималистичная форма оплаты с возможностью брендирования', 'payments-form.html')
+
+        +e('li').menu-item(class=attributes.current === '4'?' _current':'', data-page='partners')
+          +e('a').menu-item-link._simple(href="partners.html") Партнерство
+
+        +e('li').menu-item(class=attributes.current === '3'?' _current':'', data-page='company')
+          +e('a').menu-item-link._simple(href="about.html") О компании
+
+        +e('li').menu-item(class=attributes.current === '5'?' _current':'', data-page='contacts')
+          +e('a').menu-item-link._simple(href="contacts.html") Контакты
+      +e.lk
+        +b.language(data-container='toggled-menu')
+          +e.value(data-container='opener') EN
+          +e.list
+            +e('a').item(href='/ru', class=' _active')
+              +e('img').flag(src='./img/svg/flags/RUS.svg')
+              | Русский
+            +e('a').item(href='/en')
+              +e('img').flag(src='./img/svg/flags/USA.svg')
+              | Английский
+        .header__enter.btn._border._small(class!=attributes.class) Вход
+
+      +b.mobile-menu
+        +e.icon
+          +e.closer-icon
+            +e('span').closer-icon-detail
+            +e('span').closer-icon-detail
+            +e('span').closer-icon-detail
+
+        +e.list-wrapper
+          +e('ul').list
+            +e('li').item
+              +e('span').opener
+                span Решения
+                +e('img').arrow(src='./img/svg/lang-arrow_black.svg')
+              +e().menu-list
+                +e().menu-list-content
+                  +menu-item('internet.svg', 'Интернет-эквайринг', 'Принимайте платежи в любой стране мира и в любой валюте.', 'internet-acquiring.html')
+                  +menu-item('payments.svg', 'Массовые выплаты', 'Отправляйте моментальные выплаты своим клиентам.', 'payments.html')
+                  +menu-item('mobile.svg', 'Мобильная коммерция', 'Принимайте платежи с мобильного счета в любом регионе РФ.', 'mobile.html')
+                  +menu-item('recurrence.svg', 'Рекуррентные платежи', 'Увеличьте конверсию за счет упрощения процесса повторных оплат.', 'recurrence.html')
+                  +menu-item('methods.svg', 'Платежные методы', 'Повышайте прибыль за счет более 30 способов оплаты.', 'methods.html')
+                  +menu-item('p2p.svg', 'P2P-переводы', 'Комплексное решение для переводов между физическими лицами.', 'p2p.html')
+
+            +e('li').item
+              +e('span').opener
+                span Технологии
+                +e('img').arrow(src='./img/svg/lang-arrow_black.svg')
+              +e().menu-list
+                +e().menu-list-content
+                  +menu-item('work.svg', 'Бесперебойная работа', 'Комплексный подход к обеспечению непрерывной работы системы.', 'work.html')
+                  +menu-item('fraud.svg', 'Контроль фрода', 'Предотвращение потерь, связанных с мошеннической деятельностью.', 'fraud.html')
+                  +menu-item('clients.svg', 'Клиентский интерфейс', 'Простой и продуманный интерфейс для управления финансовыми потоками.', 'clients.html')
+                  +menu-item('payments-form.svg', 'Платежная форма', 'Минималистичная форма оплаты с возможностью брендирования', 'payments-form.html')
+
+            +e('li').item: a(href='partners.html') Партнерство
+            +e('li').item: a(href='about.html') О компании
+            +e('li').item: a(href='contacts.html') Контакты
+            +e('li').item._lang
+              +e('span').opener._lang
+                span EN
+                +e('img').arrow(src='./img/svg/lang-arrow_black.svg')
+              +e().menu-list
+                +e().menu-list-content
+                  +lang-item('RUS.svg', 'Русский', '/ru')
+                  +lang-item('USA.svg', 'Английский', '/en')
+            +e('li').item_enter: a(href='#')
+              .header__enter-mobile.btn._border._small._black(class!=attributes.class) Вход
+
+  +b.auth
+    +e.body
+      +e.image-wrapper
+        +e.image-city.is-visible(data-state-image='registration')
+        +e.image-city(data-state-image='login')
+        +e.image-city(data-state-image='recover')
+        +e.image-mail(data-state-image='confirm')
+        +e.image-mail(data-state-image='resend')
+
+        +e.description-text.is-visible(data-state-description='registration')
+          +e.step-item
+            img(src='./img/svg/auth/bullet.svg')
+            | Введите ваш адрес электронной почты
+          +e.step-item
+            img(src='./img/svg/auth/bullet.svg')
+            | Активируйте аккаунт по ссылке в письме
+          +e.step-item
+            img(src='./img/svg/auth/bullet.svg')
+            | Управляйте финансовыми потоками
+        +e.description-text(data-state-description='login')
+          +e.step-item
+            img(src='./img/svg/auth/bullet.svg')
+            | Введите ваш адрес электронной почты
+          +e.step-item
+            img(src='./img/svg/auth/bullet.svg')
+            | Активируйте аккаунт по ссылке в письме
+          +e.step-item
+            img(src='./img/svg/auth/bullet.svg')
+            | Управляйте финансовыми потоками
+        +e.description-text(data-state-description='recover')
+          +e.step-item_recover
+            +e('img').recover-icon(src='./img/svg/auth/icon-warning.svg')
+            | Для восстановления пароля введите адрес электронной почты, указанный при регистрации.
+
+      +e('form').content.is-visible(data-state='registration')
+        +e.title Регистрация
+
+        +e.row_input
+          +e('label').input-label Адрес электронной почты
+          +e.input-wrapper
+            +e.input-icon_login
+            +e('input').input(placeholder='my@company.ru', data-field='email')
+            +e.error-tooltip Введите ваш адрес электронной почты
+
+        +e.row.g-recaptcha(data-sitekey='AIzaSyDkx713svqTseC0hDv5Ylc3RGVz1bw5CPo')
+
+        +e.row_agreement
+          +b('label').checkbox
+            +e('input').input(type='checkbox')
+            +e.icon
+            +e.label
+              | Я принимаю условия
+              = ' '
+              a.auth__link(href='#') публичной оферты.
+
+        +e.row_submit
+          button.auth__register-button.btn._green._medium(type='submit') Создать аккаунт
+
+
+        +e.row_footer
+          | Уже партнер 1Payment? &nbsp;
+          +e('a').link(href='#', data-state-switcher='login') Войти
+
+      +e('form').content(data-state='login')
+        +e.title Войти
+
+        +e.row_input
+          +e('label').input-label Адрес электронной почты
+          +e.input-wrapper
+            +e.input-icon_login
+            +e('input').input(placeholder='my@company.ru', data-field='email')
+            +e.error-tooltip Введите ваш адрес электронной почты
+
+        +e.row_input
+          +e('label').input-label Пароль
+          +e.input-wrapper
+            +e.input-icon_password
+            +e.input-icon_eye
+            +e('input').input_password(placeholder='********', data-field='password', type='password')
+
+        +e.row
+          | Забыли пароль? &nbsp;
+          +e('a').link(href='#', data-state-switcher='recover') Восстановить
+
+        +e.row_submit
+          button.auth__login-button.btn._green._medium(type='submit') Войти
+
+        +e.row_footer
+          | Нет учетной записи? &nbsp;
+          +e('a').link(href='#', data-state-switcher='registration') Регистрация
+
+      +e('form').content(data-state='recover')
+        +e.title_no-wrap
+          +e('img').title-icon(src='/img/svg/auth/icon-arrow-left.svg', data-state-switcher='login')
+          | Восстановление пароля
+
+        +e.row_input
+          +e.input-wrapper
+            +e.input-icon_login
+            +e('input').input(placeholder='my@company.ru', data-field='email')
+            +e.error-tooltip Введите ваш адрес электронной почты
+
+        +e.row_recover-instructions
+          +e('img').recover-icon(src='./img/svg/auth/icon-warning.svg')
+          | Для восстановления пароля введите адрес электронной почты, указанный при регистрации.
+
+        +e.row_submit._recover
+          button.auth__recover-button.btn._green._medium(type='submit') Отправить
+
+      +e('form').content(data-state='confirm')
+        +e.title Подтверждение
+
+        +e.row Для подтверждения регистрации перейдите по ссылке в письме, которое мы вам отправили на:
+        +e.row_confirmation-mail konstantin@bakehouse.moscow
+
+        +e.row_email-notification Мы отправили письмо
+        +e.row_footer._no-margin
+          | Не получили письмо? &nbsp;
+          +e('a').link(href='#', data-state-switcher='recover') Повторить
+
+      +e('form').content(data-state='resend')
+        +e.title_no-wrap
+          +e('img').title-icon(src='./img/svg/auth/icon-arrow-left.svg', data-state-switcher='confirm')
+          | Восстановление пароля
+
+        +e.row Для восстановления пароля перейдите по ссылке в письме, которое мы вам отправили на:
+        +e.row_confirmation-mail konstantin@bakehouse.moscow
+
+        +e.row_footer
+          | Нет письма? Напишите на &nbsp;
+          +e('a').link(href='mailto:help@1payment.com') help@1payment.com
+
+
+mixin menu-item(img, name, descrition, link)
+  +e('a').menu-list-item(href=link)
+    +e('img').menu-list-item-img(src='./img/svg/menu-items/' + img)
+    +e().menu-list-item-info
+      +e().menu-list-item-info
+        +e('h3').menu-list-item-name= name
+        +e('p').menu-list-item-descrition= descrition
+
+mixin lang-item(img, name, link)
+  +e('a').lang-link(href=link)
+    +e('img').lang-flag(src='./img/svg/flags/' + img)
+    +e('span').lang-title= name

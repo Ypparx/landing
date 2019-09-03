@@ -1,0 +1,28 @@
+mixin more
+    +b.more(id="more") 
+        +e.wrapper
+            +e.container
+                +e.info
+                    +e('h2').sub-title О нас
+                    +e('p').description Салон Background это арт-пространство 400 м², где вы можете подобрать себе дизайнерские обои, краску, ткани, лепнину. Мы работаем с 2008 года без выходных с 10 до 20 часов.<br/> По вопросам партнерства, билетов и другим обращайтесь по номеру:
+                    +e('a').number(href="tel:+78005007513")
+                        span +7 800-500-75-13
+                    +e('a').email(href="mailto:info@salon-oboev.ru")
+                        span info@salon-oboev.ru
+                    +e('span').adress Москва, Фрунзенская набережная, 30.
+                    +e('span').ticket-buy(data-event-id="8846", rel="qtickets") Купить билет
+                +e('img').image(src="./img/salon.jpg") 
+
+        +e.links
+            +e('a').link(href="https://www.instagram.com/background.salon/" target="_blank")
+                +e('img').insta(src="./img/insta.png")
+                span background.salon
+            
+            +e('a').link(href="https://salon-oboev.ru" target="_blank")
+                +e('img').logo(src="./img/logo.png")
+                span salon-oboev.ru
+        
+            +e('a').link(href="tel:+78005007513")
+                span +7 800-500-75-13
+            +e('a').link(href="mailto:info@salon-oboev.ru")
+                span info@salon-oboev.ru
