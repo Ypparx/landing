@@ -1,1 +1,3 @@
-mpay-payment
+yarn install
+yarn server
+yarn build
